@@ -1,10 +1,11 @@
-import ClockifyAPI, {IPostable} from "../../../../../../Api/ClockifyApi";
-import User from "./User";
-import type { UserGroupType } from "../../../../../../Types/UserGroupType";
+import ClockifyAPI, {
+  IPostable,
+} from "../../../../../../Api/ClockifyApi/index.ts";
+import User from "./User/index.ts";
+import type { UserGroupType } from "../../../../../../Types/UserGroupType.ts";
 
-
-export default class Users extends ClockifyAPI implements IPostable<UserGroupType> {
-
+export default class Users extends ClockifyAPI
+  implements IPostable<UserGroupType> {
   workspaceId: string;
   userGroupId: string;
 

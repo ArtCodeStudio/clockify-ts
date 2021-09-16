@@ -1,16 +1,14 @@
-import ClockifyAPI from "../../../Api/ClockifyApi";
-import Users from "./Users";
-import Clients from "./Clients";
-import Projects from "./Projects";
-import Tags from "./Tags";
-import CustomFields from "./CustomFields";
-import TimeEntries from "./TimeEntries";
-import UserGroups from "./UserGroups";
-import Reports from "./Reports";
-
+import ClockifyAPI from "../../../Api/ClockifyApi/index.ts";
+import Users from "./Users/index.ts";
+import Clients from "./Clients/index.ts";
+import Projects from "./Projects/index.ts";
+import Tags from "./Tags/index.ts";
+import CustomFields from "./CustomFields/index.ts";
+import TimeEntries from "./TimeEntries/index.ts";
+import UserGroups from "./UserGroups/index.ts";
+import Reports from "./Reports/index.ts";
 
 export default class Workspace extends ClockifyAPI {
-
   workspaceId: string;
 
   constructor(apiKey: string, workspaceId: string) {

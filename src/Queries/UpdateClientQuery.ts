@@ -1,5 +1,5 @@
-import {Query} from "./Query";
+import { Query } from "./Query.ts";
 
 export default interface UpdateClientQuery extends Query {
-  "archive-projects"?: boolean,
+  "archive-projects"?: boolean;
 }

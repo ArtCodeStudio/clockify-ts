@@ -1,9 +1,11 @@
-import ClockifyAPI, {IPatchable} from "../../../../../../Api/ClockifyApi";
-import type { ProjectType } from "../../../../../../Types/ProjectType";
-import type { MembershipType } from "../../../../../../Types/MembershipType";
+import ClockifyAPI, {
+  IPatchable,
+} from "../../../../../../Api/ClockifyApi/index.ts";
+import type { ProjectType } from "../../../../../../Types/ProjectType.ts";
+import type { MembershipType } from "../../../../../../Types/MembershipType.ts";
 
-export default class Memberships extends ClockifyAPI implements IPatchable<ProjectType> {
-
+export default class Memberships extends ClockifyAPI
+  implements IPatchable<ProjectType> {
   workspaceId: string;
   projectId: string;
 
@@ -23,5 +25,4 @@ export default class Memberships extends ClockifyAPI implements IPatchable<Proje
   patch(data: { memberships: Array<MembershipType> }): Promise<ProjectType> {
     return this.axiosPatch<ProjectType>(data, {});
   }
-
 }

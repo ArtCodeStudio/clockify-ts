@@ -1,11 +1,14 @@
-import ClockifyAPI, { IGettable, IPostable } from "../../../../Api/ClockifyApi";
-import type { ProjectType } from "../../../../Types/ProjectType";
-import type { NewProjectType } from "../../../../Types/NewProjectType";
-import Project from "./Project";
-import ProjectsQuery from "../../../../Queries/ProjectsQuery";
+import ClockifyAPI, {
+  IGettable,
+  IPostable,
+} from "../../../../Api/ClockifyApi/index.ts";
+import type { ProjectType } from "../../../../Types/ProjectType.ts";
+import type { NewProjectType } from "../../../../Types/NewProjectType.ts";
+import Project from "./Project/index.ts";
+import ProjectsQuery from "../../../../Queries/ProjectsQuery.ts";
 
-export default class Projects extends ClockifyAPI implements  IGettable<ProjectType[]>, IPostable<ProjectType> {
-
+export default class Projects extends ClockifyAPI
+  implements IGettable<ProjectType[]>, IPostable<ProjectType> {
   workspaceId: string;
 
   constructor(apiKey: string, workspaceId: string) {
@@ -36,5 +39,3 @@ export default class Projects extends ClockifyAPI implements  IGettable<ProjectT
     return this.axiosPost<ProjectType>(data, {});
   }
 }
-
-

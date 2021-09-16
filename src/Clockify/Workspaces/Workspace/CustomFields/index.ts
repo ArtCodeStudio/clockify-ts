@@ -1,10 +1,9 @@
-import ClockifyAPI, {IGettable} from "../../../../Api/ClockifyApi";
-import CustomFieldsQuery from "../../../../Queries/CustomFieldsQuery";
-import type { CustomFieldType } from "../../../../Types/CustomFieldType";
+import ClockifyAPI, { IGettable } from "../../../../Api/ClockifyApi/index.ts";
+import CustomFieldsQuery from "../../../../Queries/CustomFieldsQuery.ts";
+import type { CustomFieldType } from "../../../../Types/CustomFieldType.ts";
 
-
-export default class CustomFields extends ClockifyAPI implements IGettable<CustomFieldType[]> {
-
+export default class CustomFields extends ClockifyAPI
+  implements IGettable<CustomFieldType[]> {
   workspaceId: string;
 
   constructor(apiKey: string, workspaceId: string) {
@@ -23,5 +22,3 @@ export default class CustomFields extends ClockifyAPI implements IGettable<Custo
     return this.axiosGet<CustomFieldType[]>(query);
   }
 }
-
-

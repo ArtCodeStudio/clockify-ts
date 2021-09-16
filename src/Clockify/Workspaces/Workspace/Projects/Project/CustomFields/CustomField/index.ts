@@ -1,13 +1,21 @@
-import ClockifyAPI, {IDeletable, IPatchable} from "../../../../../../../Api/ClockifyApi";
-import type { CustomFieldType } from "../../../../../../../Types/CustomFieldType";
+import ClockifyAPI, {
+  IDeletable,
+  IPatchable,
+} from "../../../../../../../Api/ClockifyApi/index.ts";
+import type { CustomFieldType } from "../../../../../../../Types/CustomFieldType.ts";
 
-export default class CustomField extends ClockifyAPI implements IPatchable<CustomFieldType>, IDeletable<CustomFieldType> {
-
+export default class CustomField extends ClockifyAPI
+  implements IPatchable<CustomFieldType>, IDeletable<CustomFieldType> {
   workspaceId: string;
   projectId: string;
   customFieldId: string;
 
-  constructor(apiKey: string, workspaceId: string, projectId: string, customFieldId: string) {
+  constructor(
+    apiKey: string,
+    workspaceId: string,
+    projectId: string,
+    customFieldId: string,
+  ) {
     super(apiKey);
     this.workspaceId = workspaceId;
     this.projectId = projectId;
@@ -21,7 +29,12 @@ export default class CustomField extends ClockifyAPI implements IPatchable<Custo
   /**
    * Update custom field on project
    */
-  patch(data: { defaultValue: string, status: "INACTIVE" | "VISIBLE" | "INVISIBLE" }): Promise<CustomFieldType> {
+  patch(
+    data: {
+      defaultValue: string;
+      status: "INACTIVE" | "VISIBLE" | "INVISIBLE";
+    },
+  ): Promise<CustomFieldType> {
     return this.axiosPatch<CustomFieldType>(data, {});
   }
 

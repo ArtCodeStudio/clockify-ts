@@ -17,24 +17,22 @@ export enum CustomFieldProjectDefaultValuesStatusEnum {
   invisible = "INVISIBLE",
 }
 type CustomFieldType = {
-  "id": string,
-  "workspaceId": string,
-  "name": string,
-  "description": string,
-  "type": CustomFieldTypeEnum,
-  "placeholder": string,
-  "allowedValues": Array<string>,
-  "workspaceDefaultValue": string,
-  "onlyAdminCanEdit": boolean,
-  "status": CustomFieldStatusEnum,
+  "id": string;
+  "workspaceId": string;
+  "name": string;
+  "description": string;
+  "type": CustomFieldTypeEnum;
+  "placeholder": string;
+  "allowedValues": Array<string>;
+  "workspaceDefaultValue": string;
+  "onlyAdminCanEdit": boolean;
+  "status": CustomFieldStatusEnum;
   "projectDefaultValues": [
     {
-      projectId : string,
-      value  : string,
-      status : CustomFieldProjectDefaultValuesStatusEnum,
-    }
-  ]
-}
-export {
-  CustomFieldType,
-}
+      projectId: string;
+      value: string;
+      status: CustomFieldProjectDefaultValuesStatusEnum;
+    },
+  ];
+};
+export type { CustomFieldType };

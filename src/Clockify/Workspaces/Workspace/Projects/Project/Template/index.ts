@@ -1,8 +1,10 @@
-import ClockifyAPI, {IPatchable} from "../../../../../../Api/ClockifyApi";
-import type { ProjectType } from "../../../../../../Types/ProjectType";
+import ClockifyAPI, {
+  IPatchable,
+} from "../../../../../../Api/ClockifyApi/index.ts";
+import type { ProjectType } from "../../../../../../Types/ProjectType.ts";
 
-export default class Template extends ClockifyAPI implements IPatchable<ProjectType> {
-
+export default class Template extends ClockifyAPI
+  implements IPatchable<ProjectType> {
   workspaceId: string;
   projectId: string;
 
@@ -22,5 +24,4 @@ export default class Template extends ClockifyAPI implements IPatchable<ProjectT
   patch(data: { isTemplate: boolean }): Promise<ProjectType> {
     return this.axiosPatch<ProjectType>(data, {});
   }
-
 }

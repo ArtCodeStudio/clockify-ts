@@ -1,4 +1,4 @@
-import {Query} from "./Query";
+import { Query } from "./Query.ts";
 
 export enum UpdateProjectQueryEstimateTypeEnum {
   manual = "MAUAL",
@@ -8,5 +8,5 @@ export default interface UpdateProjectQuery extends Query {
   /**
    * MANUAL type enables one fixed estimate for the whole project. AUTO type enables task-based project estimate. If AUTO is enabled, estimate duration doesn't matter.
    */
-  "estimate-type"?: "MANUAL" | "AUTO",
+  "estimate-type"?: "MANUAL" | "AUTO";
 }

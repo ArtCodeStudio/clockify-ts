@@ -1,14 +1,20 @@
-import ClockifyAPI, {IDeletable} from "../../../../../../../Api/ClockifyApi";
-import type { UserGroupType } from "../../../../../../../Types/UserGroupType";
+import ClockifyAPI, {
+  IDeletable,
+} from "../../../../../../../Api/ClockifyApi/index.ts";
+import type { UserGroupType } from "../../../../../../../Types/UserGroupType.ts";
 
-
-export default class User extends ClockifyAPI implements IDeletable<UserGroupType> {
-
+export default class User extends ClockifyAPI
+  implements IDeletable<UserGroupType> {
   workspaceId: string;
   userGroupId: string;
   userId: string;
 
-  constructor(apiKey: string, workspaceId: string, userGroupId: string, userId: string) {
+  constructor(
+    apiKey: string,
+    workspaceId: string,
+    userGroupId: string,
+    userId: string,
+  ) {
     super(apiKey);
     this.workspaceId = workspaceId;
     this.userGroupId = userGroupId;

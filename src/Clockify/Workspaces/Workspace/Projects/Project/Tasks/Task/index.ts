@@ -1,15 +1,23 @@
-import ClockifyAPI, {IDeletable, IGettable, IPuttable} from "../../../../../../../Api/ClockifyApi";
-import type { TaskType } from "../../../../../../../Types/TaskType";
-import type { NewTaskType } from "../../../../../../../Types/NewTaskType";
+import ClockifyAPI, {
+  IDeletable,
+  IGettable,
+  IPuttable,
+} from "../../../../../../../Api/ClockifyApi/index.ts";
+import type { TaskType } from "../../../../../../../Types/TaskType.ts";
+import type { NewTaskType } from "../../../../../../../Types/NewTaskType.ts";
 
-
-export default class Task extends ClockifyAPI implements IGettable<TaskType>, IPuttable<TaskType>, IDeletable<TaskType> {
-
+export default class Task extends ClockifyAPI
+  implements IGettable<TaskType>, IPuttable<TaskType>, IDeletable<TaskType> {
   workspaceId: string;
   projectId: string;
   taskId: string;
 
-  constructor(apiKey: string, workspaceId: string, projectId: string, taskId: string) {
+  constructor(
+    apiKey: string,
+    workspaceId: string,
+    projectId: string,
+    taskId: string,
+  ) {
     super(apiKey);
     this.workspaceId = workspaceId;
     this.projectId = projectId;
@@ -40,5 +48,4 @@ export default class Task extends ClockifyAPI implements IGettable<TaskType>, IP
   delete(): Promise<TaskType> {
     return this.axiosDelete<TaskType>({});
   }
-
 }

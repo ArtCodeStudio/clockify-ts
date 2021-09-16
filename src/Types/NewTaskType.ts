@@ -3,12 +3,10 @@ export enum TaskStatusEnum {
   done = "DONE",
 }
 type NewTaskType = {
-  name: string,
-  assigneeIds?: Array<string>,
-  estimate?: string,
-  billable?: boolean,
-  status?: TaskStatusEnum,
-}
-export {
-  NewTaskType,
-}
+  name: string;
+  assigneeIds?: Array<string>;
+  estimate?: string;
+  billable?: boolean;
+  status?: TaskStatusEnum;
+};
+export type { NewTaskType };

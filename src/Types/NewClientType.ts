@@ -1,6 +1,4 @@
 type NewClientType = {
-  name: string,
-}
-export {
-  NewClientType,
-}
+  name: string;
+};
+export type { NewClientType };

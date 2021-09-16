@@ -1,98 +1,159 @@
-import Clockify from "./Clockify";
-import type { ClientType } from "./Types/ClientType";
-import type { CustomFieldType } from "./Types/CustomFieldType";
-import type { EntityType } from "./Types/EntityType";
-import type { EstimateType } from "./Types/EstimateType";
-import type { MembershipType } from "./Types/MembershipType";
-import type { MemberType } from "./Types/MemberType";
-import type { NewClientType } from "./Types/NewClientType";
-import type { NewProjectType } from "./Types/NewProjectType";
-import type { NewTaskType } from "./Types/NewTaskType";
-import type { NewTimeEntryType } from "./Types/NewTimeEntryType";
-import type { NewUserType } from "./Types/NewUserType";
-import type { ProjectType } from "./Types/ProjectType";
-import type { RoleType } from "./Types/RoleType";
-import type { TagType } from "./Types/TagType";
-import type { TaskType } from "./Types/TaskType";
-import type { TimeEntryType } from "./Types/TimeEntryType";
-import type { UpdateClientType } from "./Types/UpdateClientType";
-import type { UpdateProjectType } from "./Types/UpdateProjectType";
-import type { UserGroupType } from "./Types/UserGroupType";
-import type { UserType } from "./Types/UserType";
-import type { WorkspaceType } from "./Types/WorkspaceType";
-import type { RequestDetailedReportType } from "./Types/RequestDetailedReportType";
-import type { RequestSummaryReportType } from "./Types/RequestSummaryReportType";
+import Clockify from "./Clockify/index.ts";
+import type { ClientType } from "./Types/ClientType.ts";
+import type { CustomFieldType } from "./Types/CustomFieldType.ts";
+import type { EntityType } from "./Types/EntityType.ts";
+import type { EstimateType } from "./Types/EstimateType.ts";
+import type { MembershipType } from "./Types/MembershipType.ts";
+import type { MemberType } from "./Types/MemberType.ts";
+import type { NewClientType } from "./Types/NewClientType.ts";
+import type { NewProjectType } from "./Types/NewProjectType.ts";
+import type { NewTaskType } from "./Types/NewTaskType.ts";
+import type { NewTimeEntryType } from "./Types/NewTimeEntryType.ts";
+import type { NewUserType } from "./Types/NewUserType.ts";
+import type { ProjectType } from "./Types/ProjectType.ts";
+import type { RoleType } from "./Types/RoleType.ts";
+import type { TagType } from "./Types/TagType.ts";
+import type { TaskType } from "./Types/TaskType.ts";
+import type { TimeEntryType } from "./Types/TimeEntryType.ts";
+import type { UpdateClientType } from "./Types/UpdateClientType.ts";
+import type { UpdateProjectType } from "./Types/UpdateProjectType.ts";
+import type { UserGroupType } from "./Types/UserGroupType.ts";
+import type { UserType } from "./Types/UserType.ts";
+import type { WorkspaceType } from "./Types/WorkspaceType.ts";
+import type { RequestDetailedReportType } from "./Types/RequestDetailedReportType.ts";
+import type { RequestSummaryReportType } from "./Types/RequestSummaryReportType.ts";
 
-import ClientsQuery from "./Queries/ClientsQuery";
-import CustomFieldsQuery from "./Queries/CustomFieldsQuery";
-import ProjectsQuery from "./Queries/ProjectsQuery";
-import {Query} from "./Queries/Query";
-import TagsQuery from "./Queries/TagsQuery";
-import TasksQuery from "./Queries/TasksQuery";
-import TimeEntriesQuery from "./Queries/TimeEntriesQuery";
-import TimeEntryQuery from "./Queries/TimeEntryQuery";
-import UpdateClientQuery from "./Queries/UpdateClientQuery";
-import UpdateProjectQuery from "./Queries/UpdateProjectQuery";
-import UserGroupQuery from "./Queries/UserGroupQuery";
-import UsersQuery from "./Queries/UsersQuery";
+import ClientsQuery from "./Queries/ClientsQuery.ts";
+import CustomFieldsQuery from "./Queries/CustomFieldsQuery.ts";
+import ProjectsQuery from "./Queries/ProjectsQuery.ts";
+import { Query } from "./Queries/Query.ts";
+import TagsQuery from "./Queries/TagsQuery.ts";
+import TasksQuery from "./Queries/TasksQuery.ts";
+import TimeEntriesQuery from "./Queries/TimeEntriesQuery.ts";
+import TimeEntryQuery from "./Queries/TimeEntryQuery.ts";
+import UpdateClientQuery from "./Queries/UpdateClientQuery.ts";
+import UpdateProjectQuery from "./Queries/UpdateProjectQuery.ts";
+import UserGroupQuery from "./Queries/UserGroupQuery.ts";
+import UsersQuery from "./Queries/UsersQuery.ts";
 
 import {
-  RequestDetailedReportGroupsEnum,
-  RequestDetailedReportTotalOptionEnum,
-  RequestDetailedReportSortOrderEnum,
-  RequestDetailedReportInvoicingStateEnum,
-  RequestDetailedReportApprovalStateEnum,
-  RequestDetailedReportSortColumnEnum,
   RequestDetailedReportAmountShownEnum,
-  RequestDetailedReportExportTypeEnum,
-  RequestDetailedReportContainsFilterEnum,
-  RequestDetailedReportContainedInTimeEntryFilterEnum,
-  RequestDetailedReportProjectStatusFilterEnum,
+  RequestDetailedReportApprovalStateEnum,
   RequestDetailedReportClientStatusFilterEnum,
+  RequestDetailedReportContainedInTimeEntryFilterEnum,
+  RequestDetailedReportContainsFilterEnum,
+  RequestDetailedReportExportTypeEnum,
+  RequestDetailedReportGroupsEnum,
+  RequestDetailedReportInvoicingStateEnum,
+  RequestDetailedReportProjectStatusFilterEnum,
+  RequestDetailedReportSortColumnEnum,
+  RequestDetailedReportSortOrderEnum,
   RequestDetailedReportTagStatusFilterEnum,
-  RequestDetailedReportUserStatusFilterEnum,
   RequestDetailedReportTaskStatusFilterEnum,
-} from "./Types/RequestDetailedReportType";
+  RequestDetailedReportTotalOptionEnum,
+  RequestDetailedReportUserStatusFilterEnum,
+} from "./Types/RequestDetailedReportType.ts";
 import {
-  RequestSummaryReportGroupsEnum,
-  RequestSummaryReportSortOrderEnum,
-  RequestSummaryReportInvoicingStateEnum,
-  RequestSummaryReportApprovalStateEnum,
-  RequestSummaryReportSortColumnEnum,
   RequestSummaryReportAmountShownEnum,
-  RequestSummaryReportExportTypeEnum,
-  RequestSummaryReportContainsFilterEnum,
-  RequestSummaryReportContainedInTimeEntryFilterEnum,
-  RequestSummaryReportProjectStatusFilterEnum,
+  RequestSummaryReportApprovalStateEnum,
   RequestSummaryReportClientStatusFilterEnum,
+  RequestSummaryReportContainedInTimeEntryFilterEnum,
+  RequestSummaryReportContainsFilterEnum,
+  RequestSummaryReportExportTypeEnum,
+  RequestSummaryReportGroupsEnum,
+  RequestSummaryReportInvoicingStateEnum,
+  RequestSummaryReportProjectStatusFilterEnum,
+  RequestSummaryReportSortColumnEnum,
+  RequestSummaryReportSortOrderEnum,
   RequestSummaryReportTagStatusFilterEnum,
-  RequestSummaryReportUserStatusFilterEnum,
   RequestSummaryReportTaskStatusFilterEnum,
-} from "./Types/RequestSummaryReportType";
+  RequestSummaryReportUserStatusFilterEnum,
+} from "./Types/RequestSummaryReportType.ts";
 import {
-  CustomFieldTypeEnum,
-  CustomFieldStatusEnum,
   CustomFieldProjectDefaultValuesStatusEnum,
-} from "./Types/CustomFieldType";
+  CustomFieldStatusEnum,
+  CustomFieldTypeEnum,
+} from "./Types/CustomFieldType.ts";
 import {
-  TimeEstimateTypeEnum,
+  BudgetEstimateResetOptionEnum,
   BudgetEstimateTypeEnum,
   TimeEstimateResetOptionEnum,
-  BudgetEstimateResetOptionEnum,
-} from "./Types/EstimateType";
-import { MembershipStatusEnum, MembershipTypeEnum } from "./Types/MembershipType";
-import { TaskStatusEnum } from "./Types/TaskType";
-import { RoleEnum } from "./Types/RoleType";
+  TimeEstimateTypeEnum,
+} from "./Types/EstimateType.ts";
+import {
+  MembershipStatusEnum,
+  MembershipTypeEnum,
+} from "./Types/MembershipType.ts";
+import { TaskStatusEnum } from "./Types/TaskType.ts";
+import { RoleEnum } from "./Types/RoleType.ts";
 
-import { CustomFieldQueryStatusEnum } from "./Queries/CustomFieldsQuery";
-import { QuerySortOrderEnum } from "./Queries/MultiItemsQuery";
-import { ProjectsQueryClientStatusEnum, ProjectsQueryUserStatusEnum } from "./Queries/ProjectsQuery";
-import { UpdateProjectQueryEstimateTypeEnum } from "./Queries/UpdateProjectQuery";
-import { UserQueryMembershipsEnum, UserQueryStatusEnum } from "./Queries/UsersQuery";
+import { CustomFieldQueryStatusEnum } from "./Queries/CustomFieldsQuery.ts";
+import { QuerySortOrderEnum } from "./Queries/MultiItemsQuery.ts";
+import {
+  ProjectsQueryClientStatusEnum,
+  ProjectsQueryUserStatusEnum,
+} from "./Queries/ProjectsQuery.ts";
+import { UpdateProjectQueryEstimateTypeEnum } from "./Queries/UpdateProjectQuery.ts";
+import {
+  UserQueryMembershipsEnum,
+  UserQueryStatusEnum,
+} from "./Queries/UsersQuery.ts";
 
 export default Clockify;
 export {
+  BudgetEstimateResetOptionEnum,
+  BudgetEstimateTypeEnum,
+  CustomFieldProjectDefaultValuesStatusEnum,
+  CustomFieldQueryStatusEnum,
+  CustomFieldStatusEnum,
+  CustomFieldTypeEnum,
+  MembershipStatusEnum,
+  MembershipTypeEnum,
+  ProjectsQueryClientStatusEnum,
+  ProjectsQueryUserStatusEnum,
+  QuerySortOrderEnum,
+  RequestDetailedReportAmountShownEnum,
+  RequestDetailedReportApprovalStateEnum,
+  RequestDetailedReportClientStatusFilterEnum,
+  RequestDetailedReportContainedInTimeEntryFilterEnum,
+  RequestDetailedReportContainsFilterEnum,
+  RequestDetailedReportExportTypeEnum,
+  RequestDetailedReportGroupsEnum,
+  RequestDetailedReportInvoicingStateEnum,
+  RequestDetailedReportProjectStatusFilterEnum,
+  RequestDetailedReportSortColumnEnum,
+  RequestDetailedReportSortOrderEnum,
+  RequestDetailedReportTagStatusFilterEnum,
+  RequestDetailedReportTaskStatusFilterEnum,
+  RequestDetailedReportTotalOptionEnum,
+  RequestDetailedReportUserStatusFilterEnum,
+  RequestSummaryReportAmountShownEnum,
+  RequestSummaryReportApprovalStateEnum,
+  RequestSummaryReportClientStatusFilterEnum,
+  RequestSummaryReportContainedInTimeEntryFilterEnum,
+  RequestSummaryReportContainsFilterEnum,
+  RequestSummaryReportExportTypeEnum,
+  RequestSummaryReportGroupsEnum,
+  RequestSummaryReportInvoicingStateEnum,
+  RequestSummaryReportProjectStatusFilterEnum,
+  RequestSummaryReportSortColumnEnum,
+  RequestSummaryReportSortOrderEnum,
+  RequestSummaryReportTagStatusFilterEnum,
+  RequestSummaryReportTaskStatusFilterEnum,
+  RequestSummaryReportUserStatusFilterEnum,
+  RoleEnum,
+  TaskStatusEnum,
+  TimeEstimateResetOptionEnum,
+  TimeEstimateTypeEnum,
+  UpdateProjectQueryEstimateTypeEnum,
+  UserQueryMembershipsEnum,
+  UserQueryStatusEnum,
+};
+
+export type {
+  ClientsQuery,
   ClientType,
+  CustomFieldsQuery,
   CustomFieldType,
   EntityType,
   EstimateType,
@@ -103,78 +164,26 @@ export {
   NewTaskType,
   NewTimeEntryType,
   NewUserType,
+  ProjectsQuery,
   ProjectType,
-  RoleType,
-  TagType,
-  TaskType,
-  TimeEntryType,
-  UpdateClientType,
-  UpdateProjectType,
-  UserGroupType,
-  UserType,
-  WorkspaceType,
+  Query,
   RequestDetailedReportType,
   RequestSummaryReportType,
-
-  ClientsQuery,
-  CustomFieldsQuery,
-  ProjectsQuery,
-  Query,
+  RoleType,
   TagsQuery,
+  TagType,
   TasksQuery,
+  TaskType,
   TimeEntriesQuery,
   TimeEntryQuery,
+  TimeEntryType,
   UpdateClientQuery,
+  UpdateClientType,
   UpdateProjectQuery,
+  UpdateProjectType,
   UserGroupQuery,
+  UserGroupType,
   UsersQuery,
-
-  RequestDetailedReportGroupsEnum,
-  RequestDetailedReportTotalOptionEnum,
-  RequestDetailedReportSortOrderEnum,
-  RequestDetailedReportInvoicingStateEnum,
-  RequestDetailedReportApprovalStateEnum,
-  RequestDetailedReportSortColumnEnum,
-  RequestDetailedReportAmountShownEnum,
-  RequestDetailedReportExportTypeEnum,
-  RequestDetailedReportContainsFilterEnum,
-  RequestDetailedReportContainedInTimeEntryFilterEnum,
-  RequestDetailedReportProjectStatusFilterEnum,
-  RequestDetailedReportClientStatusFilterEnum,
-  RequestDetailedReportTagStatusFilterEnum,
-  RequestDetailedReportUserStatusFilterEnum,
-  RequestDetailedReportTaskStatusFilterEnum,
-  RequestSummaryReportGroupsEnum,
-  RequestSummaryReportSortOrderEnum,
-  RequestSummaryReportInvoicingStateEnum,
-  RequestSummaryReportApprovalStateEnum,
-  RequestSummaryReportSortColumnEnum,
-  RequestSummaryReportAmountShownEnum,
-  RequestSummaryReportExportTypeEnum,
-  RequestSummaryReportContainsFilterEnum,
-  RequestSummaryReportContainedInTimeEntryFilterEnum,
-  RequestSummaryReportProjectStatusFilterEnum,
-  RequestSummaryReportClientStatusFilterEnum,
-  RequestSummaryReportTagStatusFilterEnum,
-  RequestSummaryReportUserStatusFilterEnum,
-  RequestSummaryReportTaskStatusFilterEnum,
-  CustomFieldTypeEnum,
-  CustomFieldStatusEnum,
-  CustomFieldProjectDefaultValuesStatusEnum,
-  TimeEstimateTypeEnum,
-  BudgetEstimateTypeEnum,
-  TimeEstimateResetOptionEnum,
-  BudgetEstimateResetOptionEnum,
-  MembershipStatusEnum,
-  MembershipTypeEnum,
-  TaskStatusEnum,
-  RoleEnum,
-
-  CustomFieldQueryStatusEnum,
-  QuerySortOrderEnum,
-  ProjectsQueryClientStatusEnum,
-  ProjectsQueryUserStatusEnum,
-  UpdateProjectQueryEstimateTypeEnum,
-  UserQueryMembershipsEnum,
-  UserQueryStatusEnum,
-}
+  UserType,
+  WorkspaceType,
+};

@@ -1,10 +1,13 @@
-import ClockifyAPI, { IGettable, IPostable } from "../../../../Api/ClockifyApi";
-import Client from "./Client";
-import ClientsQuery from "../../../../Queries/ClientsQuery";
-import type { ClientType } from "../../../../Types/ClientType";
+import ClockifyAPI, {
+  IGettable,
+  IPostable,
+} from "../../../../Api/ClockifyApi/index.ts";
+import Client from "./Client/index.ts";
+import ClientsQuery from "../../../../Queries/ClientsQuery.ts";
+import type { ClientType } from "../../../../Types/ClientType.ts";
 
-export default class Clients extends ClockifyAPI implements IGettable<ClientType[]>, IPostable<ClientType> {
-
+export default class Clients extends ClockifyAPI
+  implements IGettable<ClientType[]>, IPostable<ClientType> {
   workspaceId: string;
 
   constructor(apiKey: string, workspaceId: string) {

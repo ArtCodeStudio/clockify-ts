@@ -1,11 +1,17 @@
-import ClockifyAPI, {IDeletable, IGettable, IPuttable} from "../../../../../Api/ClockifyApi";
-import type { TimeEntryType } from "../../../../../Types/TimeEntryType";
-import type { NewTimeEntryType } from "../../../../../Types/NewTimeEntryType";
-import TimeEntryQuery from "../../../../../Queries/TimeEntryQuery";
+import ClockifyAPI, {
+  IDeletable,
+  IGettable,
+  IPuttable,
+} from "../../../../../Api/ClockifyApi/index.ts";
+import type { TimeEntryType } from "../../../../../Types/TimeEntryType.ts";
+import type { NewTimeEntryType } from "../../../../../Types/NewTimeEntryType.ts";
+import TimeEntryQuery from "../../../../../Queries/TimeEntryQuery.ts";
 
-
-export default class TimeEntry extends ClockifyAPI implements IGettable<TimeEntryType>, IPuttable<TimeEntryType>, IDeletable<null> {
-
+export default class TimeEntry extends ClockifyAPI
+  implements
+    IGettable<TimeEntryType>,
+    IPuttable<TimeEntryType>,
+    IDeletable<null> {
   workspaceId: string;
   timeEntryId: string;
 
@@ -39,8 +45,4 @@ export default class TimeEntry extends ClockifyAPI implements IGettable<TimeEntr
   delete(): Promise<null> {
     return this.axiosDelete<null>({});
   }
-
 }
-
-
-

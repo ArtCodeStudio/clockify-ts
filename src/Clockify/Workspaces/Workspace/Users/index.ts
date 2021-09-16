@@ -1,12 +1,15 @@
-import ClockifyAPI, { IGettable, IPostable } from "../../../../Api/ClockifyApi";
-import User from "./User";
-import UsersQuery from "../../../../Queries/UsersQuery";
-import {NewUserType} from "../../../../Types/NewUserType";
-import type { MemberType } from "../../../../Types/MemberType";
-import type { UserType } from "../../../../Types/UserType";
+import ClockifyAPI, {
+  IGettable,
+  IPostable,
+} from "../../../../Api/ClockifyApi/index.ts";
+import User from "./User/index.ts";
+import UsersQuery from "../../../../Queries/UsersQuery.ts";
+import { NewUserType } from "../../../../Types/NewUserType.ts";
+import type { MemberType } from "../../../../Types/MemberType.ts";
+import type { UserType } from "../../../../Types/UserType.ts";
 
-export default class Users extends ClockifyAPI implements IGettable<MemberType[]>, IPostable<UserType> {
-
+export default class Users extends ClockifyAPI
+  implements IGettable<MemberType[]>, IPostable<UserType> {
   workspaceId: string;
 
   constructor(apiKey: string, workspaceId: string) {
@@ -38,5 +41,4 @@ export default class Users extends ClockifyAPI implements IGettable<MemberType[]
   post(data: NewUserType): Promise<UserType> {
     return this.axiosPost<UserType>(data, {});
   }
-
 }

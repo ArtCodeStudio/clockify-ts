@@ -1,4 +1,4 @@
-import {Query} from "./Query";
+import { Query } from "./Query.ts";
 
 export enum CustomFieldQueryStatusEnum {
   inactive = "INACTIVE",
@@ -6,6 +6,6 @@ export enum CustomFieldQueryStatusEnum {
   invisible = "INVISIBLE",
 }
 export default interface CustomFieldsQuery extends Query {
-  name: string,
-  status: CustomFieldQueryStatusEnum,
+  name: string;
+  status: CustomFieldQueryStatusEnum;
 }

@@ -1,9 +1,10 @@
-import {IPostable} from "../../../../../Api/ClockifyApi";
-import {RequestSummaryReportType} from "../../../../../Types/RequestSummaryReportType";
-import {SummaryReportType} from "../../../../../Types/SummaryReportType";
-import ReportsApi from "../../../../../Api/ReportsApi";
+import { IPostable } from "../../../../../Api/ClockifyApi/index.ts";
+import { RequestSummaryReportType } from "../../../../../Types/RequestSummaryReportType.ts";
+import { SummaryReportType } from "../../../../../Types/SummaryReportType.ts";
+import ReportsApi from "../../../../../Api/ReportsApi/index.ts";
 
-export default class Summary extends ReportsApi implements IPostable<SummaryReportType> {
+export default class Summary extends ReportsApi
+  implements IPostable<SummaryReportType> {
   workspaceId: string;
 
   constructor(apiKey: string, workspaceId: string) {

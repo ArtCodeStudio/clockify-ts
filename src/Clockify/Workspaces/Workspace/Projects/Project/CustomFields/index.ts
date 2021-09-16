@@ -1,10 +1,12 @@
-import ClockifyAPI, {IGettable} from "../../../../../../Api/ClockifyApi";
-import type { CustomFieldType } from "../../../../../../Types/CustomFieldType";
-import CustomField from "./CustomField";
-import CustomFieldsQuery from "../../../../../../Queries/CustomFieldsQuery";
+import ClockifyAPI, {
+  IGettable,
+} from "../../../../../../Api/ClockifyApi/index.ts";
+import type { CustomFieldType } from "../../../../../../Types/CustomFieldType.ts";
+import CustomField from "./CustomField/index.ts";
+import CustomFieldsQuery from "../../../../../../Queries/CustomFieldsQuery.ts";
 
-export default class CustomFields extends ClockifyAPI implements IGettable<CustomFieldType[]> {
-
+export default class CustomFields extends ClockifyAPI
+  implements IGettable<CustomFieldType[]> {
   workspaceId: string;
   projectId: string;
 
@@ -19,7 +21,12 @@ export default class CustomFields extends ClockifyAPI implements IGettable<Custo
   }
 
   withId(customFieldId: string): CustomField {
-    return new CustomField(this._apiKey, this.workspaceId, this.projectId, customFieldId);
+    return new CustomField(
+      this._apiKey,
+      this.workspaceId,
+      this.projectId,
+      customFieldId,
+    );
   }
 
   /**
@@ -29,4 +36,3 @@ export default class CustomFields extends ClockifyAPI implements IGettable<Custo
     return this.axiosGet(query);
   }
 }
-

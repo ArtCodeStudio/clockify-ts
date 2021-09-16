@@ -15,18 +15,16 @@ export enum BudgetEstimateResetOptionEnum {
 
 type EstimateType = {
   "timeEstimate"?: {
-    "estimate"?: string,
-    "type"?: TimeEstimateTypeEnum,
-    "active": boolean,
-    "resetOption"?: null | TimeEstimateResetOptionEnum
-  },
+    "estimate"?: string;
+    "type"?: TimeEstimateTypeEnum;
+    "active": boolean;
+    "resetOption"?: null | TimeEstimateResetOptionEnum;
+  };
   "budgetEstimate"?: {
-    "estimate"?: number,
-    "type"?: BudgetEstimateTypeEnum,
-    "active": boolean,
-    "resetOption"?: null | BudgetEstimateResetOptionEnum
-  }
-}
-export {
-  EstimateType,
-}
+    "estimate"?: number;
+    "type"?: BudgetEstimateTypeEnum;
+    "active": boolean;
+    "resetOption"?: null | BudgetEstimateResetOptionEnum;
+  };
+};
+export type { EstimateType };

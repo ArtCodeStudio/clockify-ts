@@ -1,9 +1,11 @@
-import ClockifyAPI, { IPatchable } from "../../../../../../Api/ClockifyApi";
-import type { EstimateType } from "../../../../../../Types/EstimateType";
-import type { ProjectType } from "../../../../../../Types/ProjectType";
+import ClockifyAPI, {
+  IPatchable,
+} from "../../../../../../Api/ClockifyApi/index.ts";
+import type { EstimateType } from "../../../../../../Types/EstimateType.ts";
+import type { ProjectType } from "../../../../../../Types/ProjectType.ts";
 
-export default class Estimate extends ClockifyAPI implements IPatchable<ProjectType> {
-
+export default class Estimate extends ClockifyAPI
+  implements IPatchable<ProjectType> {
   workspaceId: string;
   projectId: string;
 
@@ -23,5 +25,4 @@ export default class Estimate extends ClockifyAPI implements IPatchable<ProjectT
   patch(data: EstimateType): Promise<ProjectType> {
     return this.axiosPatch<ProjectType>(data, {});
   }
-
 }

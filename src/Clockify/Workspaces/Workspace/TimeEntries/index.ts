@@ -1,10 +1,10 @@
-import ClockifyAPI, {IPostable} from "../../../../Api/ClockifyApi";
-import TimeEntry from "./TimeEntry";
-import type { NewTimeEntryType } from "../../../../Types/NewTimeEntryType";
-import type { TimeEntryType } from "../../../../Types/TimeEntryType";
+import ClockifyAPI, { IPostable } from "../../../../Api/ClockifyApi/index.ts";
+import TimeEntry from "./TimeEntry/index.ts";
+import type { NewTimeEntryType } from "../../../../Types/NewTimeEntryType.ts";
+import type { TimeEntryType } from "../../../../Types/TimeEntryType.ts";
 
-
-export default class TimeEntries extends ClockifyAPI implements IPostable<TimeEntryType> {
+export default class TimeEntries extends ClockifyAPI
+  implements IPostable<TimeEntryType> {
   workspaceId: string;
 
   constructor(apiKey: string, workspaceId: string) {
@@ -27,5 +27,4 @@ export default class TimeEntries extends ClockifyAPI implements IPostable<TimeEn
   post(data: NewTimeEntryType): Promise<TimeEntryType> {
     return this.axiosPost<TimeEntryType>(data, {});
   }
-
 }

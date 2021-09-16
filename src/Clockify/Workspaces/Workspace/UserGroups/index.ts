@@ -1,11 +1,13 @@
-import ClockifyAPI, {IGettable, IPostable} from "../../../../Api/ClockifyApi";
-import UserGroup from "./UserGroup";
-import UserGroupQuery from "../../../../Queries/UserGroupQuery";
-import type { UserGroupType } from "../../../../Types/UserGroupType";
+import ClockifyAPI, {
+  IGettable,
+  IPostable,
+} from "../../../../Api/ClockifyApi/index.ts";
+import UserGroup from "./UserGroup/index.ts";
+import UserGroupQuery from "../../../../Queries/UserGroupQuery.ts";
+import type { UserGroupType } from "../../../../Types/UserGroupType.ts";
 
-
-export default class UserGroups extends ClockifyAPI implements IGettable<UserGroupType[]>, IPostable<UserGroupType> {
-
+export default class UserGroups extends ClockifyAPI
+  implements IGettable<UserGroupType[]>, IPostable<UserGroupType> {
   workspaceId: string;
 
   constructor(apiKey: string, workspaceId: string) {
@@ -34,5 +36,4 @@ export default class UserGroups extends ClockifyAPI implements IGettable<UserGro
   post(data: { name: string }): Promise<UserGroupType> {
     return this.axiosPost<UserGroupType>(data);
   }
-
 }

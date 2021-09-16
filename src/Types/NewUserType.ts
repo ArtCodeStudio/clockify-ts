@@ -1,6 +1,4 @@
 type NewUserType = {
-  email: string,
-}
-export {
-  NewUserType,
-}
+  email: string;
+};
+export type { NewUserType };

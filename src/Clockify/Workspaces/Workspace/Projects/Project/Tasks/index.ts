@@ -1,11 +1,14 @@
-import ClockifyAPI, { IGettable, IPostable } from "../../../../../../Api/ClockifyApi";
-import Task from "./Task";
-import TasksQuery from "../../../../../../Queries/TasksQuery";
-import type { TaskType } from "../../../../../../Types/TaskType";
-import type { NewTaskType } from "../../../../../../Types/NewTaskType";
+import ClockifyAPI, {
+  IGettable,
+  IPostable,
+} from "../../../../../../Api/ClockifyApi/index.ts";
+import Task from "./Task/index.ts";
+import TasksQuery from "../../../../../../Queries/TasksQuery.ts";
+import type { TaskType } from "../../../../../../Types/TaskType.ts";
+import type { NewTaskType } from "../../../../../../Types/NewTaskType.ts";
 
-export default class Tasks extends ClockifyAPI implements IGettable<TaskType[]>, IPostable<TaskType> {
-
+export default class Tasks extends ClockifyAPI
+  implements IGettable<TaskType[]>, IPostable<TaskType> {
   workspaceId: string;
   projectId: string;
 
@@ -36,5 +39,4 @@ export default class Tasks extends ClockifyAPI implements IGettable<TaskType[]>,
   post(data: NewTaskType): Promise<TaskType> {
     return this.axiosPost(data, {});
   }
-
 }

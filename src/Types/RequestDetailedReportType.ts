@@ -95,60 +95,58 @@ export enum RequestDetailedReportTaskStatusFilterEnum {
 }
 
 type RequestDetailedReportType = {
-  dateRangeStart: Date,
-  dateRangeEnd: Date,
-  detailedFilter?:  {
-    page?: number,
-    pageSize?: number,
-    sortColumn?: RequestDetailedReportSortColumnEnum,
+  dateRangeStart: Date;
+  dateRangeEnd: Date;
+  detailedFilter?: {
+    page?: number;
+    pageSize?: number;
+    sortColumn?: RequestDetailedReportSortColumnEnum;
     options?: {
-      totals: RequestDetailedReportTotalOptionEnum,
-    }
-  },
-  sortOrder?: RequestDetailedReportSortOrderEnum,
-  exportType?: RequestDetailedReportExportTypeEnum,
-  rounding?: boolean,
-  amountShown?: RequestDetailedReportAmountShownEnum,
-  timeZone?: string,
-  invoicingState?: RequestDetailedReportInvoicingStateEnum,
-  approvalState?: RequestDetailedReportApprovalStateEnum,
+      totals: RequestDetailedReportTotalOptionEnum;
+    };
+  };
+  sortOrder?: RequestDetailedReportSortOrderEnum;
+  exportType?: RequestDetailedReportExportTypeEnum;
+  rounding?: boolean;
+  amountShown?: RequestDetailedReportAmountShownEnum;
+  timeZone?: string;
+  invoicingState?: RequestDetailedReportInvoicingStateEnum;
+  approvalState?: RequestDetailedReportApprovalStateEnum;
   users?: {
-    ids: string[],
-    contains: RequestDetailedReportContainsFilterEnum,
-    status: RequestDetailedReportUserStatusFilterEnum,
-  },
+    ids: string[];
+    contains: RequestDetailedReportContainsFilterEnum;
+    status: RequestDetailedReportUserStatusFilterEnum;
+  };
   clients?: {
-    ids: string[],
-    contains: RequestDetailedReportContainsFilterEnum,
-    status: RequestDetailedReportClientStatusFilterEnum,
-  },
+    ids: string[];
+    contains: RequestDetailedReportContainsFilterEnum;
+    status: RequestDetailedReportClientStatusFilterEnum;
+  };
   projects?: {
-    ids: string[],
-    contains: RequestDetailedReportContainsFilterEnum,
-    status: RequestDetailedReportProjectStatusFilterEnum,
-  },
+    ids: string[];
+    contains: RequestDetailedReportContainsFilterEnum;
+    status: RequestDetailedReportProjectStatusFilterEnum;
+  };
   tasks?: {
-    ids: string[],
-    contains: RequestDetailedReportContainsFilterEnum,
-    status: RequestDetailedReportTaskStatusFilterEnum,
-  },
+    ids: string[];
+    contains: RequestDetailedReportContainsFilterEnum;
+    status: RequestDetailedReportTaskStatusFilterEnum;
+  };
   tags?: {
-    ids: string[],
-    containedInTimeentry: RequestDetailedReportContainedInTimeEntryFilterEnum,
-    status: RequestDetailedReportTagStatusFilterEnum,
-  },
-  billable?: boolean,
-  description?: string,
-  whithoutDescription?: boolean,
+    ids: string[];
+    containedInTimeentry: RequestDetailedReportContainedInTimeEntryFilterEnum;
+    status: RequestDetailedReportTagStatusFilterEnum;
+  };
+  billable?: boolean;
+  description?: string;
+  whithoutDescription?: boolean;
   customFields?: {
-    id: string,
-    value: string,
-    type: string,
-    typeCondition: string,
-    empty: boolean,
-  }[]
-}
+    id: string;
+    value: string;
+    type: string;
+    typeCondition: string;
+    empty: boolean;
+  }[];
+};
 
-export {
-  RequestDetailedReportType
-}
+export type { RequestDetailedReportType };

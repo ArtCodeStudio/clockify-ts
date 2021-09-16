@@ -1,9 +1,13 @@
-import ClockifyAPI, {IGettable, IPostable} from "../../../../Api/ClockifyApi";
-import type { TagType } from "../../../../Types/TagType";
-import Tag from "./Tag";
-import TagsQuery from "../../../../Queries/TagsQuery";
+import ClockifyAPI, {
+  IGettable,
+  IPostable,
+} from "../../../../Api/ClockifyApi/index.ts";
+import type { TagType } from "../../../../Types/TagType.ts";
+import Tag from "./Tag/index.ts";
+import TagsQuery from "../../../../Queries/TagsQuery.ts";
 
-export default class Tags extends ClockifyAPI implements IGettable<TagType[]>, IPostable<TagType> {
+export default class Tags extends ClockifyAPI
+  implements IGettable<TagType[]>, IPostable<TagType> {
   workspaceId: string;
 
   constructor(apiKey: string, workspaceId: string) {
@@ -32,5 +36,4 @@ export default class Tags extends ClockifyAPI implements IGettable<TagType[]>, I
   post(data: { name: string }): Promise<TagType> {
     return this.axiosPost(data, {});
   }
-
 }

@@ -1,10 +1,12 @@
-import ClockifyAPI, {IDeletable, IPuttable} from "../../../../../Api/ClockifyApi";
-import Users from "./Users";
-import type { UserGroupType } from "../../../../../Types/UserGroupType";
+import ClockifyAPI, {
+  IDeletable,
+  IPuttable,
+} from "../../../../../Api/ClockifyApi/index.ts";
+import Users from "./Users/index.ts";
+import type { UserGroupType } from "../../../../../Types/UserGroupType.ts";
 
-
-export default class UserGroup extends ClockifyAPI implements IPuttable<UserGroupType>, IDeletable<UserGroupType> {
-
+export default class UserGroup extends ClockifyAPI
+  implements IPuttable<UserGroupType>, IDeletable<UserGroupType> {
   workspaceId: string;
   userGroupId: string;
 
@@ -35,6 +37,4 @@ export default class UserGroup extends ClockifyAPI implements IPuttable<UserGrou
   delete(): Promise<UserGroupType> {
     return this.axiosDelete<UserGroupType>({});
   }
-
-
 }

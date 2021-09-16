@@ -1,9 +1,8 @@
-import Summary from "./Summary";
-import ClockifyAPI from "../../../../Api/ClockifyApi";
-import Detailed from "./Detailed";
+import Summary from "./Summary/index.ts";
+import ClockifyAPI from "../../../../Api/ClockifyApi/index.ts";
+import Detailed from "./Detailed/index.ts";
 
 export default class Reports extends ClockifyAPI {
-
   workspaceId: string;
 
   constructor(apiKey: string, workspaceId: string) {
@@ -18,5 +17,4 @@ export default class Reports extends ClockifyAPI {
   get detailed(): Detailed {
     return new Detailed(this._apiKey, this.workspaceId);
   }
-
 }

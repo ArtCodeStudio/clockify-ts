@@ -1,5 +1,5 @@
-import {Query} from "./Query";
-import MultiItemsQuery from "./MultiItemsQuery";
+import { Query } from "./Query.ts";
+import MultiItemsQuery from "./MultiItemsQuery.ts";
 
 export enum UserQueryMembershipsEnum {
   workspace = "WORKSPACE",
@@ -14,10 +14,10 @@ export enum UserQueryStatusEnum {
   inactive = "INACTIVE",
 }
 export default interface UsersQuery extends Query, MultiItemsQuery {
-  "memberships"?: UserQueryMembershipsEnum,
-  "email"?: string,
-  "projectId"?: string,
-  "name"?: string,
-  "status"?: UserQueryStatusEnum,
-  "includeRoles"?: boolean,
+  "memberships"?: UserQueryMembershipsEnum;
+  "email"?: string;
+  "projectId"?: string;
+  "name"?: string;
+  "status"?: UserQueryStatusEnum;
+  "includeRoles"?: boolean;
 }

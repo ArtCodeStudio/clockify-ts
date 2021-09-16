@@ -1,10 +1,12 @@
-import ClockifyAPI, {IDeletable, IPuttable} from "../../../../../Api/ClockifyApi";
-import TimeEntries from "./TimeEntries";
-import {UserType} from "../../../../../Types/UserType";
+import ClockifyAPI, {
+  IDeletable,
+  IPuttable,
+} from "../../../../../Api/ClockifyApi/index.ts";
+import TimeEntries from "./TimeEntries/index.ts";
+import { UserType } from "../../../../../Types/UserType.ts";
 
-
-export default class User extends ClockifyAPI implements IPuttable<UserType>, IDeletable<null> {
-
+export default class User extends ClockifyAPI
+  implements IPuttable<UserType>, IDeletable<null> {
   workspaceId: string;
   userId: string;
 

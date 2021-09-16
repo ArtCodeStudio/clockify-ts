@@ -1,7 +1,5 @@
 type EntityType = {
-  "id": string,
-  "name": string,
-}
-export {
-  EntityType,
-}
+  "id": string;
+  "name": string;
+};
+export type { EntityType };

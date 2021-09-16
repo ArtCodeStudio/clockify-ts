@@ -12,18 +12,16 @@ export enum MembershipTypeEnum {
 }
 type MembershipType = {
   "hourlyRate"?: {
-    "amount": number,
-    "currency"?: string
-  },
+    "amount": number;
+    "currency"?: string;
+  };
   "costRate"?: {
-    "amount": number,
-    "currency"?: string
-  },
-  "membershipStatus"?: MembershipStatusEnum,
-  "membershipType"?: MembershipTypeEnum,
-  "targetId"?: string,
-  "userId": string
-}
-export {
-  MembershipType,
-}
+    "amount": number;
+    "currency"?: string;
+  };
+  "membershipStatus"?: MembershipStatusEnum;
+  "membershipType"?: MembershipTypeEnum;
+  "targetId"?: string;
+  "userId": string;
+};
+export type { MembershipType };

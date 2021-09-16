@@ -1,10 +1,17 @@
-import ClockifyAPI, {IGettable, IPatchable, IPostable} from "../../../../../../Api/ClockifyApi";
-import TimeEntriesQuery from "../../../../../../Queries/TimeEntriesQuery";
-import type { TimeEntryType } from "../../../../../../Types/TimeEntryType";
-import type { NewTimeEntryType } from "../../../../../../Types/NewTimeEntryType";
+import ClockifyAPI, {
+  IGettable,
+  IPatchable,
+  IPostable,
+} from "../../../../../../Api/ClockifyApi/index.ts";
+import TimeEntriesQuery from "../../../../../../Queries/TimeEntriesQuery.ts";
+import type { TimeEntryType } from "../../../../../../Types/TimeEntryType.ts";
+import type { NewTimeEntryType } from "../../../../../../Types/NewTimeEntryType.ts";
 
-export default class TimeEntries extends ClockifyAPI implements IGettable<TimeEntryType[]>, IPostable<TimeEntryType>, IPatchable<TimeEntryType> {
-
+export default class TimeEntries extends ClockifyAPI
+  implements
+    IGettable<TimeEntryType[]>,
+    IPostable<TimeEntryType>,
+    IPatchable<TimeEntryType> {
   workspaceId: string;
   userId: string;
 
@@ -47,4 +54,3 @@ export default class TimeEntries extends ClockifyAPI implements IGettable<TimeEn
     return this.axiosPatch<TimeEntryType>(data);
   }
 }
-

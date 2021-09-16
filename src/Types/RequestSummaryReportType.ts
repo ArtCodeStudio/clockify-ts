@@ -88,56 +88,54 @@ export enum RequestSummaryReportTaskStatusFilterEnum {
 }
 
 type RequestSummaryReportType = {
-  dateRangeStart: Date,
-  dateRangeEnd: Date,
-  summaryFilter:  {
-    groups: RequestSummaryReportGroupsEnum[],
-    sortColumn?: RequestSummaryReportSortColumnEnum,
-  },
-  sortOrder?: RequestSummaryReportSortOrderEnum,
-  exportType?: RequestSummaryReportExportTypeEnum,
-  rounding?: boolean,
-  amountShown?: RequestSummaryReportAmountShownEnum,
-  timeZone?: string,
-  invoicingState?: RequestSummaryReportInvoicingStateEnum,
-  approvalState?: RequestSummaryReportApprovalStateEnum,
+  dateRangeStart: Date;
+  dateRangeEnd: Date;
+  summaryFilter: {
+    groups: RequestSummaryReportGroupsEnum[];
+    sortColumn?: RequestSummaryReportSortColumnEnum;
+  };
+  sortOrder?: RequestSummaryReportSortOrderEnum;
+  exportType?: RequestSummaryReportExportTypeEnum;
+  rounding?: boolean;
+  amountShown?: RequestSummaryReportAmountShownEnum;
+  timeZone?: string;
+  invoicingState?: RequestSummaryReportInvoicingStateEnum;
+  approvalState?: RequestSummaryReportApprovalStateEnum;
   users?: {
-    ids: string[],
-    contains: RequestSummaryReportContainsFilterEnum,
-    status: RequestSummaryReportUserStatusFilterEnum,
-  },
+    ids: string[];
+    contains: RequestSummaryReportContainsFilterEnum;
+    status: RequestSummaryReportUserStatusFilterEnum;
+  };
   clients?: {
-    ids: string[],
-    contains: RequestSummaryReportContainsFilterEnum,
-    status: RequestSummaryReportClientStatusFilterEnum,
-  },
+    ids: string[];
+    contains: RequestSummaryReportContainsFilterEnum;
+    status: RequestSummaryReportClientStatusFilterEnum;
+  };
   projects?: {
-    ids: string[],
-    contains: RequestSummaryReportContainsFilterEnum,
-    status: RequestSummaryReportProjectStatusFilterEnum,
-  },
+    ids: string[];
+    contains: RequestSummaryReportContainsFilterEnum;
+    status: RequestSummaryReportProjectStatusFilterEnum;
+  };
   tasks?: {
-    ids: string[],
-    contains: RequestSummaryReportContainsFilterEnum,
-    status: RequestSummaryReportTaskStatusFilterEnum,
-  },
+    ids: string[];
+    contains: RequestSummaryReportContainsFilterEnum;
+    status: RequestSummaryReportTaskStatusFilterEnum;
+  };
   tags?: {
-    ids: string[],
-    containedInTimeentry: RequestSummaryReportContainedInTimeEntryFilterEnum,
-    status: RequestSummaryReportTagStatusFilterEnum,
-  },
-  billable?: boolean,
-  description?: string,
-  whithoutDescription?: boolean,
+    ids: string[];
+    containedInTimeentry: RequestSummaryReportContainedInTimeEntryFilterEnum;
+    status: RequestSummaryReportTagStatusFilterEnum;
+  };
+  billable?: boolean;
+  description?: string;
+  whithoutDescription?: boolean;
   customFields?: {
-    id: string,
-    value: string,
-    type: string,
-    typeCondition: string,
-    empty: boolean,
-  }[]
-}
+    id: string;
+    value: string;
+    type: string;
+    typeCondition: string;
+    empty: boolean;
+  }[];
+};
 
-export {
-  RequestSummaryReportType
-}
+export type { RequestSummaryReportType };

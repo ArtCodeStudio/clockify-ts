@@ -1,15 +1,13 @@
-import ClockifyAPI from "../Api/ClockifyApi";
-import Users from "./Users"
-import Workspace from "./Workspaces";
-import Workspaces from "./Workspaces";
+import ClockifyAPI from "../Api/ClockifyApi/index.ts";
+import Users from "./Users/index.ts";
+import Workspaces from "./Workspaces/index.ts";
 
 export default class Clockify extends ClockifyAPI {
-
-  workspace: Workspace;
+  workspace: Workspaces;
 
   constructor(apiKey: string) {
     super(apiKey);
-    this.workspace = new Workspace(apiKey);
+    this.workspace = new Workspaces(apiKey);
   }
 
   get user(): Users {
@@ -19,5 +17,4 @@ export default class Clockify extends ClockifyAPI {
   get workspaces(): Workspaces {
     return new Workspaces(this._apiKey);
   }
-
 }

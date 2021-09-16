@@ -1,8 +1,8 @@
-import ClockifyAPI, {IPatchable} from "../../../../../Api/ClockifyApi";
-
+import ClockifyAPI, {
+  IPatchable,
+} from "../../../../../Api/ClockifyApi/index.ts";
 
 export default class Invoiced extends ClockifyAPI implements IPatchable<null> {
-
   workspaceId: string;
 
   constructor(apiKey: string, workspaceId: string) {
@@ -17,8 +17,9 @@ export default class Invoiced extends ClockifyAPI implements IPatchable<null> {
   /**
    * Mark time entries as invoiced
    */
-  patch(data: { "timeEntryIds": Array<string>, "invoiced": boolean }): Promise<null> {
+  patch(
+    data: { "timeEntryIds": Array<string>; "invoiced": boolean },
+  ): Promise<null> {
     return this.axiosPatch<null>(data, {});
   }
-
 }

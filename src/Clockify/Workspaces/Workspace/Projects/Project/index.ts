@@ -1,15 +1,22 @@
-import ClockifyAPI, {IDeletable, IGettable, IPuttable} from "../../../../../Api/ClockifyApi";
-import type { ProjectType } from "../../../../../Types/ProjectType";
-import CustomFields from "./CustomFields";
-import Estimate from "./Estimate";
-import Memberships from "./Memberships";
-import Tasks from "./Tasks";
-import Template from "./Template";
-import type { UpdateProjectType } from "../../../../../Types/UpdateProjectType";
-import UpdateProjectQuery from "../../../../../Queries/UpdateProjectQuery";
+import ClockifyAPI, {
+  IDeletable,
+  IGettable,
+  IPuttable,
+} from "../../../../../Api/ClockifyApi/index.ts";
+import type { ProjectType } from "../../../../../Types/ProjectType.ts";
+import CustomFields from "./CustomFields/index.ts";
+import Estimate from "./Estimate/index.ts";
+import Memberships from "./Memberships/index.ts";
+import Tasks from "./Tasks/index.ts";
+import Template from "./Template/index.ts";
+import type { UpdateProjectType } from "../../../../../Types/UpdateProjectType.ts";
+import UpdateProjectQuery from "../../../../../Queries/UpdateProjectQuery.ts";
 
-export default class Project extends ClockifyAPI implements IGettable<ProjectType>, IPuttable<ProjectType>, IDeletable<ProjectType> {
-
+export default class Project extends ClockifyAPI
+  implements
+    IGettable<ProjectType>,
+    IPuttable<ProjectType>,
+    IDeletable<ProjectType> {
   workspaceId: string;
   projectId: string;
 
@@ -54,7 +61,10 @@ export default class Project extends ClockifyAPI implements IGettable<ProjectTyp
   /**
    * Update project on workspace
    */
-  put(data: UpdateProjectType, query: UpdateProjectQuery = {}): Promise<ProjectType> {
+  put(
+    data: UpdateProjectType,
+    query: UpdateProjectQuery = {},
+  ): Promise<ProjectType> {
     return this.axiosPut<ProjectType>(data, query);
   }
 
@@ -64,5 +74,4 @@ export default class Project extends ClockifyAPI implements IGettable<ProjectTyp
   delete(): Promise<ProjectType> {
     return this.axiosDelete<ProjectType>({});
   }
-
 }
