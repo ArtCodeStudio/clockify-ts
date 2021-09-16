@@ -36,6 +36,7 @@ import UpdateProjectQuery from "./Queries/UpdateProjectQuery.ts";
 import UserGroupQuery from "./Queries/UserGroupQuery.ts";
 import UsersQuery from "./Queries/UsersQuery.ts";
 
+import type { DetailedReportType } from "./Types/DetailedReportType.ts";
 import {
   RequestDetailedReportAmountShownEnum,
   RequestDetailedReportApprovalStateEnum,
@@ -53,6 +54,8 @@ import {
   RequestDetailedReportTotalOptionEnum,
   RequestDetailedReportUserStatusFilterEnum,
 } from "./Types/RequestDetailedReportType.ts";
+
+import type { SummaryReportType } from "./Types/SummaryReportType.ts";
 import {
   RequestSummaryReportAmountShownEnum,
   RequestSummaryReportApprovalStateEnum,
@@ -155,6 +158,7 @@ export type {
   ClientType,
   CustomFieldsQuery,
   CustomFieldType,
+  DetailedReportType,
   EntityType,
   EstimateType,
   MembershipType,
@@ -170,6 +174,7 @@ export type {
   RequestDetailedReportType,
   RequestSummaryReportType,
   RoleType,
+  SummaryReportType,
   TagsQuery,
   TagType,
   TasksQuery,
