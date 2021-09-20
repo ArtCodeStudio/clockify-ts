@@ -27,6 +27,6 @@ export default class Users extends ClockifyAPI
    * Add users to group
    */
   post(data: { userId: string }): Promise<UserGroupType> {
-    return this.axiosPost<UserGroupType>(data, {});
+    return this.fetchPost<UserGroupType>(data, {});
   }
 }

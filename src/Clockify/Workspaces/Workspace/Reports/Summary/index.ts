@@ -17,6 +17,6 @@ export default class Summary extends ReportsApi
   }
 
   post(data: RequestSummaryReportType): Promise<SummaryReportType> {
-    return this.axiosPost<SummaryReportType>(data, {});
+    return this.fetchPost<SummaryReportType>(data, {});
   }
 }

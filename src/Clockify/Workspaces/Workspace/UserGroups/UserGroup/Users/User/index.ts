@@ -29,6 +29,6 @@ export default class User extends ClockifyAPI
    * Remove user from group
    */
   delete(): Promise<UserGroupType> {
-    return this.axiosDelete<UserGroupType>({});
+    return this.fetchDelete<UserGroupType>({});
   }
 }

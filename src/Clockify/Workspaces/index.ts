@@ -13,6 +13,6 @@ export default class Workspaces extends ClockifyAPI
   }
 
   get(): Promise<WorkspaceType[]> {
-    return this.axiosGet<WorkspaceType[]>();
+    return this.fetchGet<WorkspaceType[]>();
   }
 }

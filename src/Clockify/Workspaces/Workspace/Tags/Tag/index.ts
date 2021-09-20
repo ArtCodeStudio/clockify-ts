@@ -23,13 +23,13 @@ export default class Tag extends ClockifyAPI
    * Update tag
    */
   put(data: { name: string; archived?: boolean }): Promise<TagType> {
-    return this.axiosPut<TagType>(data, {});
+    return this.fetchPut<TagType>(data, {});
   }
 
   /**
    * Delete tag
    */
   delete(): Promise<TagType> {
-    return this.axiosDelete<TagType>({});
+    return this.fetchDelete<TagType>({});
   }
 }

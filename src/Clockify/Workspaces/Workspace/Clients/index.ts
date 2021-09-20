@@ -27,13 +27,13 @@ export default class Clients extends ClockifyAPI
    * Find clients on workspace
    */
   get(query: ClientsQuery = {}): Promise<ClientType[]> {
-    return this.axiosGet<ClientType[]>(query);
+    return this.fetchGet<ClientType[]>(query);
   }
 
   /**
    * Add a new client to workspace
    */
   post(data: { name: string }): Promise<ClientType> {
-    return this.axiosPost<ClientType>(data, {});
+    return this.fetchPost<ClientType>(data, {});
   }
 }

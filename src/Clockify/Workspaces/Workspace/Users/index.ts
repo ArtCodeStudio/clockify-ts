@@ -29,7 +29,7 @@ export default class Users extends ClockifyAPI
    * Find all users on workspace
    */
   get(query: UsersQuery): Promise<MemberType[]> {
-    return this.axiosGet<MemberType[]>(query);
+    return this.fetchGet<MemberType[]>(query);
   }
 
   /**
@@ -39,6 +39,6 @@ export default class Users extends ClockifyAPI
    * are limited by the number of paid user seats on that workspace.
    */
   post(data: NewUserType): Promise<UserType> {
-    return this.axiosPost<UserType>(data, {});
+    return this.fetchPost<UserType>(data, {});
   }
 }

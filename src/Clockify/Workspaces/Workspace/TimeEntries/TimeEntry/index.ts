@@ -29,20 +29,20 @@ export default class TimeEntry extends ClockifyAPI
    * Get a specific time entry on workspace
    */
   get(query: TimeEntryQuery = {}): Promise<TimeEntryType> {
-    return this.axiosGet<TimeEntryType>(query);
+    return this.fetchGet<TimeEntryType>(query);
   }
 
   /**
    * Update time entry on workspace
    */
   put(data: NewTimeEntryType): Promise<TimeEntryType> {
-    return this.axiosPut<TimeEntryType>(data, {});
+    return this.fetchPut<TimeEntryType>(data, {});
   }
 
   /**
    * Delete time entry from workspace
    */
   delete(): Promise<null> {
-    return this.axiosDelete<null>({});
+    return this.fetchDelete<null>({});
   }
 }

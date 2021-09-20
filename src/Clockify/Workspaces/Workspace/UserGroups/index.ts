@@ -27,13 +27,13 @@ export default class UserGroups extends ClockifyAPI
    * Find all groups on workspace
    */
   get(query: UserGroupQuery): Promise<UserGroupType[]> {
-    return this.axiosGet<UserGroupType[]>(query);
+    return this.fetchGet<UserGroupType[]>(query);
   }
 
   /**
    * Add a new group to workspace
    */
   post(data: { name: string }): Promise<UserGroupType> {
-    return this.axiosPost<UserGroupType>(data);
+    return this.fetchPost<UserGroupType>(data);
   }
 }

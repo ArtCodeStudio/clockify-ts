@@ -17,6 +17,6 @@ export default class Detailed extends ReportsApi
   }
 
   post(data: RequestDetailedReportType): Promise<DetailedReportType> {
-    return this.axiosPost<DetailedReportType>(data, {});
+    return this.fetchPost<DetailedReportType>(data, {});
   }
 }

@@ -10,6 +10,6 @@ export default class Users extends ClockifyAPI implements IGettable<UserType> {
    * Get currently logged in user's info
    */
   get(): Promise<UserType> {
-    return this.axiosGet<UserType>();
+    return this.fetchGet<UserType>();
   }
 }

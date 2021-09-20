@@ -32,20 +32,20 @@ export default class Task extends ClockifyAPI
    * Find task on project by ID
    */
   get(): Promise<TaskType> {
-    return this.axiosGet<TaskType>({});
+    return this.fetchGet<TaskType>({});
   }
 
   /**
    * Update task on project
    */
   put(data: NewTaskType): Promise<TaskType> {
-    return this.axiosPut<TaskType>(data, {});
+    return this.fetchPut<TaskType>(data, {});
   }
 
   /**
    * Delete task from project
    */
   delete(): Promise<TaskType> {
-    return this.axiosDelete<TaskType>({});
+    return this.fetchDelete<TaskType>({});
   }
 }

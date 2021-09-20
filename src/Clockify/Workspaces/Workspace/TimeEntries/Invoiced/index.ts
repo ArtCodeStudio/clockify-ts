@@ -20,6 +20,6 @@ export default class Invoiced extends ClockifyAPI implements IPatchable<null> {
   patch(
     data: { "timeEntryIds": Array<string>; "invoiced": boolean },
   ): Promise<null> {
-    return this.axiosPatch<null>(data, {});
+    return this.fetchPatch<null>(data, {});
   }
 }

@@ -35,13 +35,13 @@ export default class CustomField extends ClockifyAPI
       status: "INACTIVE" | "VISIBLE" | "INVISIBLE";
     },
   ): Promise<CustomFieldType> {
-    return this.axiosPatch<CustomFieldType>(data, {});
+    return this.fetchPatch<CustomFieldType>(data, {});
   }
 
   /**
    * Remove custom field from project
    */
   delete(): Promise<CustomFieldType> {
-    return this.axiosDelete<CustomFieldType>({});
+    return this.fetchDelete<CustomFieldType>({});
   }
 }

@@ -22,6 +22,6 @@ export default class Template extends ClockifyAPI
    * Update project template
    */
   patch(data: { isTemplate: boolean }): Promise<ProjectType> {
-    return this.axiosPatch<ProjectType>(data, {});
+    return this.fetchPatch<ProjectType>(data, {});
   }
 }

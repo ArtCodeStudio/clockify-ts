@@ -29,7 +29,7 @@ export default class TimeEntries extends ClockifyAPI
    * Gets a time entry for specified user on workspace.
    */
   get(query: TimeEntriesQuery = {}): Promise<TimeEntryType[]> {
-    return this.axiosGet<TimeEntryType[]>(query);
+    return this.fetchGet<TimeEntryType[]>(query);
   }
 
   /**
@@ -41,7 +41,7 @@ export default class TimeEntries extends ClockifyAPI
    * (request example: {"end":"2019-02-07T14:00:07.000Z"}
    */
   post(data: NewTimeEntryType): Promise<TimeEntryType> {
-    return this.axiosPost<TimeEntryType>(data, {});
+    return this.fetchPost<TimeEntryType>(data, {});
   }
 
   /**
@@ -51,6 +51,6 @@ export default class TimeEntries extends ClockifyAPI
    * required field(s). You'll simply get "Entity not created" message.
    */
   patch(data: { end: Date }): Promise<TimeEntryType> {
-    return this.axiosPatch<TimeEntryType>(data);
+    return this.fetchPatch<TimeEntryType>(data);
   }
 }

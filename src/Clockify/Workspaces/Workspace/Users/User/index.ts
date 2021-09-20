@@ -28,13 +28,13 @@ export default class User extends ClockifyAPI
    * Update user's workspace status
    */
   put(data: { membershipStatus: "ACTIVE" | "INACTIVE" }): Promise<UserType> {
-    return this.axiosPut<UserType>(data, {});
+    return this.fetchPut<UserType>(data, {});
   }
 
   /**
    * Remove user from workspace
    */
   delete(): Promise<null> {
-    return this.axiosDelete<null>({});
+    return this.fetchDelete<null>({});
   }
 }

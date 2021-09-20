@@ -28,13 +28,13 @@ export default class UserGroup extends ClockifyAPI
    * Update group name
    */
   put(data: { name: string }): Promise<UserGroupType> {
-    return this.axiosPut<UserGroupType>(data, {});
+    return this.fetchPut<UserGroupType>(data, {});
   }
 
   /**
    * Delete group
    */
   delete(): Promise<UserGroupType> {
-    return this.axiosDelete<UserGroupType>({});
+    return this.fetchDelete<UserGroupType>({});
   }
 }

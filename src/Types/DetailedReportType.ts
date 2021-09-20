@@ -14,8 +14,8 @@ type DetailedReportType = {
     projectId: string;
     clientId: string;
     timeInterval: {
-      start: Date;
-      end: Date;
+      start: string;
+      end: string;
       duration: number;
     };
     approvalRequestId: string;

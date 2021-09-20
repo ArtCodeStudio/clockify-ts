@@ -23,6 +23,6 @@ export default class Estimate extends ClockifyAPI
    * Update project estimate
    */
   patch(data: EstimateType): Promise<ProjectType> {
-    return this.axiosPatch<ProjectType>(data, {});
+    return this.fetchPatch<ProjectType>(data, {});
   }
 }

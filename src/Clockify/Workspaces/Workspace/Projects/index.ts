@@ -29,13 +29,13 @@ export default class Projects extends ClockifyAPI
    * Find project by ID
    */
   get(query: ProjectsQuery = {}): Promise<ProjectType[]> {
-    return this.axiosGet<ProjectType[]>(query);
+    return this.fetchGet<ProjectType[]>(query);
   }
 
   /**
    * Add a new project to workspace
    */
   post(data: NewProjectType): Promise<ProjectType> {
-    return this.axiosPost<ProjectType>(data, {});
+    return this.fetchPost<ProjectType>(data, {});
   }
 }

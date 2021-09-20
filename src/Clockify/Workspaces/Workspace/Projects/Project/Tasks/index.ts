@@ -30,13 +30,13 @@ export default class Tasks extends ClockifyAPI
    * Find tasks on project
    */
   get(query: TasksQuery = {}): Promise<TaskType[]> {
-    return this.axiosGet(query);
+    return this.fetchGet(query);
   }
 
   /**
    * Add a new task on project
    */
   post(data: NewTaskType): Promise<TaskType> {
-    return this.axiosPost(data, {});
+    return this.fetchPost(data, {});
   }
 }

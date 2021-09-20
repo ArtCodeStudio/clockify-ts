@@ -28,13 +28,13 @@ export default class Client extends ClockifyAPI
     data: UpdateClientType,
     query: UpdateClientQuery = {},
   ): Promise<ClientType> {
-    return this.axiosPut<ClientType>(data, query);
+    return this.fetchPut<ClientType>(data, query);
   }
 
   /**
    * Delete client
    */
   delete(): Promise<ClientType> {
-    return this.axiosDelete<ClientType>({});
+    return this.fetchDelete<ClientType>({});
   }
 }

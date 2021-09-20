@@ -23,6 +23,6 @@ export default class Memberships extends ClockifyAPI
    * Update project memberships
    */
   patch(data: { memberships: Array<MembershipType> }): Promise<ProjectType> {
-    return this.axiosPatch<ProjectType>(data, {});
+    return this.fetchPatch<ProjectType>(data, {});
   }
 }

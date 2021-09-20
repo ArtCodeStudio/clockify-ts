@@ -19,6 +19,6 @@ export default class CustomFields extends ClockifyAPI
    * Get custom fields on workspace
    */
   get(query: CustomFieldsQuery): Promise<CustomFieldType[]> {
-    return this.axiosGet<CustomFieldType[]>(query);
+    return this.fetchGet<CustomFieldType[]>(query);
   }
 }

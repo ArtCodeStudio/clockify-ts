@@ -25,6 +25,6 @@ export default class TimeEntries extends ClockifyAPI
    * "start" is the only mandatory field in this request.
    */
   post(data: NewTimeEntryType): Promise<TimeEntryType> {
-    return this.axiosPost<TimeEntryType>(data, {});
+    return this.fetchPost<TimeEntryType>(data, {});
   }
 }

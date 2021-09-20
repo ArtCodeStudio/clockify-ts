@@ -55,7 +55,7 @@ export default class Project extends ClockifyAPI
    * Find project by ID
    */
   get(): Promise<ProjectType> {
-    return this.axiosGet<ProjectType>({});
+    return this.fetchGet<ProjectType>({});
   }
 
   /**
@@ -65,13 +65,13 @@ export default class Project extends ClockifyAPI
     data: UpdateProjectType,
     query: UpdateProjectQuery = {},
   ): Promise<ProjectType> {
-    return this.axiosPut<ProjectType>(data, query);
+    return this.fetchPut<ProjectType>(data, query);
   }
 
   /**
    * Delete project from workspace
    */
   delete(): Promise<ProjectType> {
-    return this.axiosDelete<ProjectType>({});
+    return this.fetchDelete<ProjectType>({});
   }
 }

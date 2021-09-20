@@ -27,13 +27,13 @@ export default class Tags extends ClockifyAPI
    * Find tags on workspace
    */
   get(query?: TagsQuery): Promise<TagType[]> {
-    return this.axiosGet(query);
+    return this.fetchGet(query);
   }
 
   /**
    * Add a new tag to workspace
    */
   post(data: { name: string }): Promise<TagType> {
-    return this.axiosPost(data, {});
+    return this.fetchPost(data, {});
   }
 }
