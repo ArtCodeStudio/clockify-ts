@@ -1,4 +1,4 @@
-import { stringify } from "qs";
+import { qs } from "qs";
 import { isJson } from "../../Utils/Json.ts";
 import ClockifyError from "../../ClockifyError/index.ts";
 import { Query } from "../../Queries/Query.ts";
@@ -13,7 +13,7 @@ const paramsSerializer = (
     | Record<string, string>
     | undefined,
 ) =>
-  stringify(params, {
+  qs.stringify(params, {
     arrayFormat: "repeat",
     serializeDate: (d: Date) => d.toISOString(),
   });
